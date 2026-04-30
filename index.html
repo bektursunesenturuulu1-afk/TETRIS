@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TETRIS — Neon Edition</title>
+  <meta name="description" content="A stunning neon-themed Tetris game built with HTML5 Canvas and JavaScript." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="particles" id="particles"></div>
+
+  <div class="wrapper">
+    <!-- Left Panel -->
+    <aside class="side-panel left-panel">
+      <div class="logo">
+        <span class="logo-t">T</span><span class="logo-e">E</span><span class="logo-t2">T</span><span class="logo-r">R</span><span class="logo-i">I</span><span class="logo-s">S</span>
+      </div>
+      <div class="stat-card" id="score-card">
+        <div class="stat-label">SCORE</div>
+        <div class="stat-value" id="score">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">LEVEL</div>
+        <div class="stat-value" id="level">1</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">LINES</div>
+        <div class="stat-value" id="lines">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">HIGH SCORE</div>
+        <div class="stat-value hi" id="highscore">0</div>
+      </div>
+      <div class="controls-hint">
+        <div class="hint-title">CONTROLS</div>
+        <div class="hint-row"><kbd>←</kbd><kbd>→</kbd> Move</div>
+        <div class="hint-row"><kbd>↑</kbd> Rotate</div>
+        <div class="hint-row"><kbd>↓</kbd> Soft Drop</div>
+        <div class="hint-row"><kbd>Space</kbd> Hard Drop</div>
+        <div class="hint-row"><kbd>P</kbd> Pause</div>
+      </div>
+    </aside>
+
+    <!-- Game Board -->
+    <main class="game-area">
+      <div class="canvas-wrapper" id="canvas-wrapper">
+        <canvas id="gameCanvas" width="300" height="600"></canvas>
+        <div class="overlay" id="overlay">
+          <div class="overlay-content">
+            <div class="overlay-title" id="overlay-title">NEON TETRIS</div>
+            <div class="overlay-sub" id="overlay-sub">Press START to play</div>
+            <button class="btn-start" id="btn-start">▶ START</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Right Panel -->
+    <aside class="side-panel right-panel">
+      <div class="next-label">NEXT</div>
+      <div class="next-box">
+        <canvas id="nextCanvas" width="120" height="120"></canvas>
+      </div>
+      <div class="hold-label">HOLD</div>
+      <div class="hold-box">
+        <canvas id="holdCanvas" width="120" height="120"></canvas>
+      </div>
+      <button class="btn-action" id="btn-pause">⏸ PAUSE</button>
+      <button class="btn-action danger" id="btn-restart">↺ RESTART</button>
+
+      <div class="combo-display" id="combo-display"></div>
+    </aside>
+  </div>
+
+  <!-- Line Clear Popup -->
+  <div class="line-popup" id="line-popup"></div>
+
+  <script src="game.js"></script>
+</body>
+</html>
